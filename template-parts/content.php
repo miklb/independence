@@ -25,6 +25,13 @@
 	</header><!-- .entry-header -->
 	<div class="content is-medium content-wrapper">
 		<?php
+		if ( is_single() && has_excerpt() ) {
+			?>
+			<div class="box">
+			<p class="p-bridgy-twitter-content"><?php the_excerpt(); ?></p>
+			</div>
+			<?php
+		}
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'independence' ), array( 'span' => array( 'class' => array() ) ) ),
