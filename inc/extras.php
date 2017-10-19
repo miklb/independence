@@ -472,3 +472,21 @@ class Independence_Walker_Comment extends Walker_Comment {
 	}
 
 }
+/**
+ * Featured image in atom feed.
+ * @method featuredtoRSS
+ * @param  $string $content post content.
+ * @return $string $content updated content w/image.
+ */
+function independence_featuredtorss( $content ) {
+	global $post;
+	if ( has_post_thumbnail( $post->ID ) ) {
+		$content = '<div>' . get_the_post_thumbnail( $post->ID, 'medium', array(
+			'style' => 'margin-bottom: 15px;',
+		) ) . '</div>' . $content;
+	}
+	return $content;
+}
+
+add_filter( 'the_excerpt_rss', 'independence_featuredtorss' );
+add_filter( 'the_content_feed', 'Independence_featuredtorss' );
