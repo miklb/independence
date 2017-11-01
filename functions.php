@@ -79,7 +79,7 @@ remove_action( 'wp_head', 'rsd_link' );
 function micropub_syndicate_to_github( $synd_urls, $user_id ) {
 
 	$synd_urls[] = array(
-		'uid' => 'https://silo.pub/micropub?access_token=2684efb7c1c00a92a6e08c2bcd1fc2c6',
+		'uid' => 'https://silo.pub/github.com/miklb?access_token=2684efb7c1c00a92a6e08c2bcd1fc2c6',
 		'name' => 'GitHub',
 	);
 	return $synd_urls;
