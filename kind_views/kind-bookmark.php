@@ -39,7 +39,7 @@
 if ( ! $embed_html ) {
 	if ( $title ) {
 ?>
-	<h5 class="is-5"><a href="<?php echo $url; ?>" class="u-bookmark-of"><?php echo $title; ?></h5>
+	<h5 class="is-5"><a href="<?php echo esc_url( $url ); ?>" class="u-bookmark-of"><?php echo $title; ?></h5>
 <?php
 	}
 }
@@ -50,10 +50,10 @@ if ( ! $embed_html ) {
 				</span>
 				<span>A post on</span>
 				<span class="p-publication">
-					<?php echo $site_name; ?>
+					<?php echo esc_html( $site_name ); ?>
 				</span>
 				<span class="kind-author">
-					by <?php echo $author; ?>
+					by <?php echo esc_html( $author ); ?>
 				 </span>
 		</div>
 <cite class="h-cite response u-bookmark-of">
@@ -61,11 +61,11 @@ if ( ! $embed_html ) {
 	if ( $cite ) {
 		if ( $embed_html ) {
 			if ( ! get_the_title() ) {
-					echo '<div class="p-content">' . $embed_html . '</div>';	} else {
-					echo '<div class="p-content">' . $embed_html . '</div>';
+					echo '<div class="p-content">' . esc_html( $embed_html ) . '</div>';	} else {
+					echo '<div class="p-content">' . esc_html( $embed_html ) . '</div>';
 					}
 		} elseif ( array_key_exists( 'summary', $cite ) ) {
-			echo sprintf( '<blockquote class="p-content">%1s</blockquote>', $cite['summary'] );
+			echo sprintf( '<blockquote class="p-content">%1s</blockquote>', esc_html( $cite['summary'] ) );
 		}
 	}
 
