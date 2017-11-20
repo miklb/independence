@@ -53,7 +53,7 @@ if ( ! $embed_html ) {
 					<?php echo $site_name; ?>
 				</span>
 				<span class="kind-author">
-					by<?php echo $author; ?>
+					by <?php echo $author; ?>
 				 </span>
 		</div>
 <cite class="h-cite response u-bookmark-of">
