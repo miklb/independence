@@ -18,7 +18,7 @@
 	$url        = $meta->get_url();
 	$embed_html = self::get_embed( $meta->get_url() );
 	if ( '' !== $embed_html ) {
-		$dom = new ( DOMDocument );
+		$dom = new DOMDocument;
 		$dom->loadHTML( $embed_html, LIBXML_HTML_NOIMPLIED );
 
 		$nodelinks = $dom->getElementsByTagName( 'a' );
