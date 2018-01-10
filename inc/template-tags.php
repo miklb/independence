@@ -98,7 +98,7 @@ if ( ! function_exists( 'independence_posted_on' ) ) :
 	function independence_posted_on() {
 		$time_string = '<time class="entry-date dt-published dt-updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-      // TODO: tweak time check to only show updated if different day. +bug
+      // TODO: tweak time check to only show updated if different day. +bug id:0 gh:1
 			$time_string = '<time class="entry-date dt-published" datetime="%1$s">%2$s</time><time class="dt-updated" datetime="%3$s">%4$s</time>';
 		}
 
