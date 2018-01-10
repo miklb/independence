@@ -33,5 +33,10 @@
     "pedantic": false,
     "smartLists": true,
     "langPrefix": "language-"
+  },
+  "sync": {
+    "id": "5a14aa789f0f9378aa6b74c5",
+    "name": "miklb/independence",
+    "useImdoneioForPriority": true
   }
 }
