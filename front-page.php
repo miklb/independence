@@ -19,7 +19,7 @@ get_header(); ?>
 					<div class="media-content">
 					<div class="content is-large">
 						<p>
-							<span class="title is-3">Howdy! I'm <span class="p-name">Michael Bishop</span>.</span> <small>@miklb</small>
+							<span class="title is-3">Howdy! I'm <a class="u-url p-name" href="https://miklb.com">Michael Bishop</a>.</span> <small>@miklb</small>
 							<br>
 							<span class="title is-4 p-note"> Chef, web mechanic, general mayhem maker.</span>
 							<br>
