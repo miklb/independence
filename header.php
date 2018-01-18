@@ -16,6 +16,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link href="https://micro.blog/miklb" rel="me" />
+<meta name="description" content="<?php bloginfo('description'); ?>" />
 <link rel="alternate" type="application/atom+xml" title="Miklb&#039;s Mindless Ramblings &raquo; Feed" href="<?php bloginfo( 'atom_url' ); ?>" />
 <link rel="feed" type="text/html" title="Miklb's Mindless Ramblings Blog feed" href="https://miklb.com/firehose/" />
 <?php wp_head(); ?>
