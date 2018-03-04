@@ -85,3 +85,8 @@ function micropub_syndicate_to_github( $synd_urls, $user_id ) {
 	return $synd_urls;
 }
 add_filter( 'micropub_syndicate-to', 'micropub_syndicate_to_github' );
+
+function independence_extract_domain_name( $url ) {
+	$parse = wp_parse_url( $url, PHP_URL_HOST );
+	return preg_replace( '/^www\./', '', $parse );
+}
