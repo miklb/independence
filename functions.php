@@ -32,7 +32,7 @@ add_action( 'after_setup_theme', 'independence_setup' );
  * Enqueue scripts.
  */
 function independence_scripts() {
-	wp_enqueue_style( 'independence-style', get_template_directory_uri() . '/style.min.css' );
+	wp_enqueue_style( 'independence-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_script( 'fontfaceobserver', get_template_directory_uri() . '/assets/js/fontfaceobserver.js', array(), '2.0.9', true );
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array( 'fontfaceobserver' ), '', true );
 	wp_deregister_style( 'kind' );
