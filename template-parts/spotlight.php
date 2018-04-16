@@ -11,6 +11,7 @@
 
 			<div class="column">
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<a href="/" class="u-author"></a>
 					<figure class="led-image">
 						<?php if ( has_post_thumbnail() ) {
 							the_post_thumbnail( array(540, 275) );

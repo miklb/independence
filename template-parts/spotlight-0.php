@@ -12,6 +12,7 @@
 	<div class="container">
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<a href="/" class="u-author"></a>
 				<div class="columns">
 				<div class="column is-one-quarter">
 				<header>

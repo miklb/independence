@@ -159,6 +159,7 @@ get_header(); ?>
 										<article class="columns h-entry <?php echo $kind ?>">
 										<?php if ( $day !== get_the_date() ) { ?>
 											<header class="column is-one-quarter">
+												<a href="/" class="u-author"></a>
 												<p class="details"><?php echo get_the_date( '' ); ?><?php $day = get_the_date(); ?></p>
 												<h4><time class="dt-published" datetime="<?php echo esc_attr( get_the_date( DATE_ATOM ) ); ?>"><?php echo get_the_date( 'H:i' ); ?></time> <a class="u-url" href="<?php the_permalink(); ?>" rel="bookmark">#</a></h4>
 											</header>
