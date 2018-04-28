@@ -37,13 +37,14 @@ if ( is_single() ) {
 		<div class="navbar-brand">
 			<a class="nav-item" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 
-			<?php if ( ! is_singular() ) {
+			<?php
+			if ( ! is_singular() ) {
 				$mf2title = 'p-name';
-} else {
+			} else {
 				$mf2title = '';
-}
+			}
 			?>
-			<span class="title <?php echo $mf2title; ?>">Miklb's Mindless Ramblings</span>
+			<span class="title <?php echo esc_html( $mf2title ); ?>">Miklb's Mindless Ramblings</span>
 			</a>
 			<div class="navbar-burger">
 				<span></span>

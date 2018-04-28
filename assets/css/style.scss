@@ -68,11 +68,18 @@ html {
 .kind-heading {
   .icon {
     display: inline-block;
+    height: 2rem;
+    width: 2rem;
+
     svg {
       display: inline-block;
       vertical-align: middle;
+      width: 100%;
+      height: 100%;
+      
     }
   }
+
   .kind-author {
     img {
       margin: 0 .25em;
