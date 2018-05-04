@@ -68,24 +68,6 @@ add_filter( 'xmlrpc_enabled', '__return_false' );
 
 remove_action( 'wp_head', 'rsd_link' );
 
-/**
- * [micropub_syndicate_to_github description]
- *
- * @method micropub_syndicate_to_github
- * @param  [type] $synd_urls [description].
- * @param  [type] $user_id   [description].
- * @return [type]                                  [description]
- */
-function micropub_syndicate_to_github( $synd_urls, $user_id ) {
-
-	$synd_urls[] = array(
-		'uid' => 'https://silo.pub/github.com/miklb?access_token=2684efb7c1c00a92a6e08c2bcd1fc2c6',
-		'name' => 'GitHub',
-	);
-	return $synd_urls;
-}
-add_filter( 'micropub_syndicate-to', 'micropub_syndicate_to_github' );
-
 function independence_extract_domain_name( $url ) {
 	$parse = wp_parse_url( $url, PHP_URL_HOST );
 	return preg_replace( '/^www\./', '', $parse );
