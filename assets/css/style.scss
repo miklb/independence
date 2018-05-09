@@ -16,175 +16,163 @@ Use it to make something cool, have fun, and share what you've learned with othe
 independence is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
+
 @charset 'utf-8';
 @import '../../node_modules/bulma/bulma';
+@import '../../node_modules/bulma-timeline/dist/bulma-timeline';
 @import 'vendor/angled-edges';
-
 $family-sans-serif: 'WorkSans';
 $blockquote-bg: hsl(0, 0%, 99%);
-
 @import 'fonts';
-
 html {
-  font-family: sans-serif;
-
-  height: 100%;
+    font-family: sans-serif;
+    height: 100%;
 }
 
 .title {
-  font-family: 'WorkSans-ExtraBold';
-  font-weight: 900;
+    font-family: 'WorkSans-ExtraBold';
+    font-weight: 900;
 }
 
 .timeline {
-  > article {
-    header {
-      border-left: solid 1px $grey-lighter;
-      padding-left: 1.5em;
-      position: relative;
-
-      &::before {
-        background-color: $turquoise;
-        border-radius: 100%;
-        content: '';
-        height: 1em;
-        left: -.5em;
-        position: absolute;
-        top: 1em;
-        width: 1em;
-    }
-
-      &:last-child {
-        border-left: 0;
-        }
-
-      p {
-        font-size: $size-4;
+    >article {
+        header {
+            border-left: solid 1px $grey-lighter;
+            padding-left: 1.5em;
+            position: relative;
+            &::before {
+                background-color: $turquoise;
+                border-radius: 100%;
+                content: '';
+                height: 1em;
+                left: -.5em;
+                position: absolute;
+                top: 1em;
+                width: 1em;
+            }
+            &:last-child {
+                border-left: 0;
+            }
+            p {
+                font-size: $size-4;
+            }
         }
     }
-  }
 }
 
 .kind-heading {
-  .icon {
-    display: inline-block;
-    height: 2rem;
-    width: 2rem;
-
-    svg {
-      display: inline-block;
-      vertical-align: middle;
-      width: 100%;
-      height: 100%;
-      
+    .icon {
+        display: inline-block;
+        height: 2rem;
+        width: 2rem;
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            height: 100%;
+        }
     }
-  }
-
-  .kind-author {
-    img {
-      margin: 0 .25em;
-      padding: 0;
-      display: inline-block;
-      vertical-align: middle;
+    .kind-author {
+        img {
+            margin: 0 .25em;
+            padding: 0;
+            display: inline-block;
+            vertical-align: middle;
+        }
     }
-  }
 }
 
-
 .h-card {
-  img {
-    padding: .5em;
-  }
+    img {
+        padding: .5em;
+    }
 }
 
 .note {
-
-  .icon {
-    svg {
-      color: $grey;
-      fill: $grey;
+    .icon {
+        svg {
+            color: $grey;
+            fill: $grey;
+        }
     }
-  }
 }
 
 .entry-meta,
 .entry-header {
-  margin: 1em 0;
+    margin: 1em 0;
 }
 
-.pile  {
-  margin-top: 1.5em;
-
-  .icon {
-    height: 64px;
-    display: inline-block;
-    svg {
-      color: $grey;
-      fill: $grey;
-      display: inline-block;
-      vertical-align: middle;
+.pile {
+    margin-top: 1.5em;
+    .icon {
+        height: 64px;
+        display: inline-block;
+        svg {
+            color: $grey;
+            fill: $grey;
+            display: inline-block;
+            vertical-align: middle;
+        }
     }
-  }
-
-  li {
-    display: inline-block;
-    vertical-align: middle;
-    min-width: 64px;
-  }
+    li {
+        display: inline-block;
+        vertical-align: middle;
+        min-width: 64px;
+    }
 }
 
 .e-bold {
-  font-family: 'WorkSans-ExtraBold';
-  font-weight: 900;
+    font-family: 'WorkSans-ExtraBold';
+    font-weight: 900;
 }
 
 .banner {
-  background: $background;
+    background: $background;
 }
 
 .home-top {
-  @include angled-edge('outside bottom', 'lower left', $background);
-  background: $background;
+    @include angled-edge('outside bottom', 'lower left', $background);
+    background: $background;
 }
 
 .featured-articles {
-  margin-top: 4em;
+    margin-top: 4em;
 }
 
 .secondary-articles {
-  @include angled-edge('outside bottom', 'lower left', $white);
+    @include angled-edge('outside bottom', 'lower left', $white);
 }
 
 .home-timeline {
-  @include angled-edge('outside bottom', 'lower left', $white-bis);
-  background: $white-bis;
+    @include angled-edge('outside bottom', 'lower left', $white-bis);
+    background: $white-bis;
 }
 
 .footer {
-  background: $white;
-  margin-top: 4em;
+    background: $white;
+    margin-top: 4em;
 }
 
 .quote {
-  .content {
-    blockquote {
-      background: $blockquote-bg;
-      border: 0;
+    .content {
+        blockquote {
+            background: $blockquote-bg;
+            border: 0;
+        }
     }
-  }
 }
 
 .twitter-tweet {
-  margin-left: 20%;
+    margin-left: 20%;
 }
 
 .svg-bookmark {
-  height: 2em;
-  width: 2em;
+    height: 2em;
+    width: 2em;
 }
 
-@media (min-width: 800px ) {
-  .comment-form {
-    width: 50%;
-  }
+@media (min-width: 800px) {
+    .comment-form {
+        width: 50%;
+    }
 }
