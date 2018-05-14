@@ -5,7 +5,7 @@
   "license": "GPL-2.0",
   "dependencies": {
     "bulma": "^0.7.1",
-    "bulma-timeline": "^2.0.1",
+    "bulma-timeline": "^2.0.3",
     "postcss": "^6.0.22",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^3.1.0",
@@ -14,11 +14,11 @@
     "postcss-url": "^7.3.2"
   },
   "devDependencies": {
-    "autoprefixer": "^7.2.3",
+    "autoprefixer": "^8.5.0",
     "browser-sync": "^2.24.4",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-postcss": "^7.0.0",
-    "gulp-sass": "^3.2.1",
-    "precss": "^2.0.0"
+    "gulp-sass": "^4.0.1",
+    "precss": "^3.1.2"
   }
 }
