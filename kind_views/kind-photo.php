@@ -42,7 +42,7 @@
 </div>
 <?php
 if ( $photos && ! has_post_thumbnail( get_the_ID() ) && empty( $src_urls ) )  {
-	// TODO: update gallery output for bulma columns
+	// TODO: update gallery output for bulma columns id:4 gh:19
 	echo gallery_shortcode(
 		array(
 			'id'      => get_the_ID(),
