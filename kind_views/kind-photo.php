@@ -8,30 +8,23 @@
 ?>
 
 	<?php
-	$kind = get_post_kind_slug( get_the_ID() );
-	$meta = new Kind_Meta( get_the_ID() );
-	$author = Kind_View::get_hcard( $meta->get_author() );
-	$cite = $meta->get_cite();
-  $photos = $meta->get( 'photo' );
-	$site_name = Kind_View::get_site_name( $meta->get_cite(), $meta->get_url() );
-	$title = Kind_View::get_cite_title( $meta->get_cite(), $meta->get_url() );
-	$embed_html = self::get_embed( $meta->get_url() );
-	if ( $embed_html !== '' ) {
-		$dom = new DOMDocument;
-		$dom->loadHTML( $embed_html, LIBXML_HTML_NOIMPLIED );
-
-		$nodelinks = $dom->getElementsByTagName( 'a' );
-		$links = iterator_to_array( $nodelinks );
-		$count = count( $links );
-		$i = 0;
-
-		foreach ( $links as $link ) $i++; {
-			if ( $i === $count ) {
-				$link->setAttribute( 'class', 'u-url' );
-			}
-		};
-		$embed_html = $dom->saveHTML();
+	$mf2_post = new MF2_Post( get_the_ID() );
+	$cite     = $mf2_post->fetch();
+	if ( ! $cite ) {
+	$cite = array();
 	}
+	$meta   = new Kind_Meta( get_the_ID() );
+	$author = array();
+	if ( isset( $cite['author'] ) ) {
+			$author = Kind_View::get_hcard( $cite['author'] );
+	}
+	$url = '';
+	if ( isset( $cite['url'] ) ) {
+			$url = $cite['url'];
+	}
+	$photos    = $mf2_post->get( 'photo' );
+	$site_name = Kind_View::get_site_name( $cite );
+	$title     = Kind_View::get_cite_title( $cite );
 ?>
 <div class="kind-heading">
 		<span class="icon is-medium">
@@ -47,14 +40,19 @@
 			?>
 		</span>
 </div>
-
-	<?php
-	if ( $photos ) {
-		for ($i = 0; $i < count($photos); $i++) { ?>
-			<p>
-				<figure class="image is-square">
-					<img src="<?php echo esc_url( $photos[$i] ); ?>" class="u-photo">
-				</figure>
-			</p>
-	 <?php 	}
+<?php
+if ( $photos && ! has_post_thumbnail( get_the_ID() ) && empty( $src_urls ) )  {
+	// TODO: update gallery output for bulma columns
+	echo gallery_shortcode(
+		array(
+			'id'      => get_the_ID(),
+			'size'    => 'large',
+			'columns' => 1,
+			'link'    => 'file',
+		)
+	);
+} else {
+	if ( $embed ) {
+		echo sprintf( '<blockquote class="e-summary">%1s</blockquote>', $embed );
 	}
+}
