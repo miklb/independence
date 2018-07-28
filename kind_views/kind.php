@@ -4,14 +4,24 @@
  *	The Goal of this Template is to be a general all-purpose model that will be replaced by customization in other templates
  */
 
-$kind = get_post_kind_slug( get_the_ID() );
-$meta = new Kind_Meta( get_the_ID() );
-$author = Kind_View::get_hcard( $meta->get_author() );
-$cite = $meta->get_cite();
-$photo = $meta->get_photo();
-$site_name = Kind_View::get_site_name( $meta->get_cite(), $meta->get_url() );
-$title = Kind_View::get_cite_title( $meta->get_cite(), $meta->get_url() );
-$rsvp = $meta->get( 'rsvp' );
+$mf2_post = new MF2_Post( get_the_ID() );
+	$cite     = $mf2_post->fetch();
+	if ( ! $cite ) {
+	$cite = array();
+	}
+	$meta   = new Kind_Meta( get_the_ID() );
+	$author = array();
+	if ( isset( $cite['author'] ) ) {
+			$author = Kind_View::get_hcard( $cite['author'] );
+	}
+	$url = '';
+	if ( isset( $cite['url'] ) ) {
+			$url = $cite['url'];
+	}
+	$photos   = get_attached_media( 'image', get_the_ID() );
+	$site_name = Kind_View::get_site_name( $cite );
+	$title     = Kind_View::get_cite_title( $cite );
+	$rsvp = $meta->get( 'rsvp' );
 
 $embed_html = self::get_embed( $meta->get_url() );
 

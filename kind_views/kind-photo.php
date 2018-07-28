@@ -22,7 +22,7 @@
 	if ( isset( $cite['url'] ) ) {
 			$url = $cite['url'];
 	}
-	$photos    = $mf2_post->get( 'photo' );
+	$photos   = get_attached_media( 'image', get_the_ID() );
 	$site_name = Kind_View::get_site_name( $cite );
 	$title     = Kind_View::get_cite_title( $cite );
 ?>
