@@ -13,7 +13,7 @@ get_header(); ?>
 				<div class="container h-card media">
 					<figure class="media-left">
 						<p class="image is-128x128 u-photo">
-							<img src="https://pbs.twimg.com/profile_images/799821749386874880/X_vv7MnK.jpg">
+							<img src="https://cdn.miklb.com/content/uploads/2019/01/14223755/wsi-imageoptim-miklb_2018_profile.jpg">
 						</p>
 					</figure>
 					<div class="media-content">
