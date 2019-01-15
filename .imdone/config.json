@@ -17,10 +17,15 @@
       "XXX",
       "IDEA",
       "NOTE",
-      "REVIEW"
+      "REVIEW",
+      "HELP"
     ]
   },
   "lists": [
+    {
+      "name": "HELP",
+      "hidden": false
+    },
     {
       "name": "TODO",
       "hidden": false
@@ -38,5 +43,6 @@
     "id": "5a14aa789f0f9378aa6b74c5",
     "name": "miklb/independence",
     "useImdoneioForPriority": true
-  }
+  },
+  "noHelp": true
 }
