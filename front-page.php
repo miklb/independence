@@ -21,7 +21,7 @@ get_header(); ?>
 						<p>
 							<span class="title is-3">Howdy! I'm <a class="u-url p-name" href="https://miklb.com">Michael Bishop</a>.</span> <small>@miklb</small>
 							<br>
-							<span class="title is-4 p-note"> Chef, web mechanic, general mayhem maker.</span>
+							<span class="title is-4 p-note">Digital plumber, food maker. Proud Tampa native. Sports fan & music lover. he/him</span>
 							<br>
 							<span class="subtitle is-4 p-note">Welcome to my corner of the web, chronicling life in a digital world.</span>
 					</div><!-- intro -->
