@@ -112,7 +112,7 @@ function unspam_webmentions( $approved, $commentdata ) {
 
 add_filter( 'pre_comment_approved', 'unspam_webmentions', '99', 2 );
 
-add_filter( 'show_admin_bar', '__return_false' );
+//add_filter( 'show_admin_bar', '__return_false' );
 
 /**
  * Remove version description.
