@@ -13,7 +13,7 @@
 	if ( ! $cite ) {
 	$cite = array();
 	}
-	$meta   = new Kind_Meta( get_the_ID() );
+	
 	$author = array();
 	if ( isset( $cite['author'] ) ) {
 			$author = Kind_View::get_hcard( $cite['author'] );
