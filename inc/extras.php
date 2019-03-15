@@ -130,14 +130,14 @@ add_filter( 'the_generator', 'independence_remove_version' );
  * @method independence_mf2_featured_image
  * @param array $attr attributes for the featured image.
  * @return array $attr- attributes.
- */
+
 function independence_mf2_featured_image( $attr ) {
 	remove_filter( 'wp_get_attachment_image_attributes','independence_mf2_featured_image' );
 	$attr['class'] .= ' u-featured';
 	return $attr;
 }
 add_filter( 'wp_get_attachment_image_attributes','independence_mf2_featured_image' );
-
+ */
 /**
  * Override core Walker_Comment for mf2 & Bulma.
  *
