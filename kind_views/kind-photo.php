@@ -9,22 +9,15 @@
 
 	<?php
 	$mf2_post = new MF2_Post( get_the_ID() );
+	$photos   = get_attached_media( 'image', get_the_ID() );
+	// Check for any sort of URL that is probably media
+	$src_urls = kind_src_url_in_content( get_the_content() );
 	$cite     = $mf2_post->fetch();
 	if ( ! $cite ) {
-	$cite = array();
+		$cite = array();
 	}
-	
-	$author = array();
-	if ( isset( $cite['author'] ) ) {
-			$author = Kind_View::get_hcard( $cite['author'] );
-	}
-	$url = '';
-	if ( isset( $cite['url'] ) ) {
-			$url = $cite['url'];
-	}
-	$photos   = get_attached_media( 'image', get_the_ID() );
-	$site_name = Kind_View::get_site_name( $cite );
-	$title     = Kind_View::get_cite_title( $cite );
+	$url   = ifset( $cite['url'] );
+	$embed = self::get_embed( $url );
 ?>
 <div class="kind-heading">
 		<span class="icon is-medium">
@@ -32,17 +25,14 @@
 		</span>
 		<span>A post on</span>
 		<span class="p-publication">
-			<?php if ( $site_name ) {
-				echo $site_name;
-			} else {
-				echo 'Instagram';
-			}
+			<?php if ( isset( $cite['name'] ) ) {
+	echo sprintf( '<span class="p-name">%1s</a>', $cite['name'] );
+}
 			?>
 		</span>
 </div>
 <?php
 if ( $photos && ! has_post_thumbnail( get_the_ID() ) && empty( $src_urls ) )  {
-	// TODO: update gallery output for bulma columns id:4 gh:19
 	echo gallery_shortcode(
 		array(
 			'id'      => get_the_ID(),

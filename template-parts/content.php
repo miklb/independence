@@ -1,12 +1,5 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<a href="/" class="u-author"></a>
-	<figure class="led-image image">
-	<?php
-	if ( has_post_thumbnail() ) {
-		the_post_thumbnail( 'latest-article-home' );
-	}
-?>
-	</figure>
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :
