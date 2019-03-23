@@ -98,7 +98,8 @@ if ( ! function_exists( 'independence_posted_on' ) ) :
 	function independence_posted_on() {
 		$time_string = '<time class="entry-date dt-published dt-updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-      // TODO: tweak time check to only show updated if different day. id:0 gh:1 +bug
+	  // TODO: compare get_the_date to get_the_modified_date if same only show hour/minute update. Should it show hour:minute to start with?
+	  
 			$time_string = '<time class="entry-date dt-published" datetime="%1$s">%2$s</time><time class="dt-updated" datetime="%3$s">%4$s</time>';
 		}
 
