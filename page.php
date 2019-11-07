@@ -21,12 +21,21 @@ get_header(); ?>
 		<section class="section">
 			<div class="container">
 		<?php
-        the_title( '<h1 Class="entry-title p-name title is-2">', '</h1>' );
-
-        the_content();
+		the_title( '<h1 class="entry-title p-name title is-2">', '</h1>' );
 		?>
+		<div class="content is-medium content-wrapper">
+		<?php
+			the_content(
+				sprintf(
+					/* translators: %s: Name of current post. */
+					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'independence' ), array( 'span' => array( 'class' => array() ) ) ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				) 
+			);
 
-		</div>
+			?>
+
+		</div><!-- .content-wrapper -->
 	</section>
 </main>
 </div>
